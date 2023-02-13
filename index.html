@@ -43,8 +43,48 @@
             <button class="card-button">Explore</button>
         </div>
 
-        <button class="button"> Explore Everything </button>
+        <button class="button big search"> Explore Everything </button>
 
     </div>
+
+    <form class="form" id="search-form">
+        <label for="search">
+            <input placeholder="search" id="search-input" type="text" >
+            <button class="button search"> Search</button>
+        </label>
+    </form>
+
+    <ul id="results"></ul>
+      
+      <script> 
+        const form = document.getElementById("search-form");
+        const input = document.getElementById("search-input");
+        const results = document.getElementById("results");
+
+        const products = [
+        { name: "product 1", description: "This is a description for product 1", url: "./products/product1.html" },
+        { name: "product 2", description: "This is a description for product 2", url: "product2.html" },
+        { name: "product 3", description: "This is a description for product 3", url: "product3.html" }
+        ];
+
+        form.addEventListener("submit", event => {
+        event.preventDefault();
+
+        while (results.firstChild) {
+            results.removeChild(results.firstChild);
+        }
+
+        const query = input.value.toLowerCase();
+
+        products.forEach(product => {
+            if (product.name.toLowerCase().includes(query) || product.description.toLowerCase().includes(query)) {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${product.url}"><strong>${product.name}</strong><br>${product.description}</a>`;
+            results.appendChild(li);
+            }
+        });
+        });
+        </script> 
 </body>
+
 </html>
