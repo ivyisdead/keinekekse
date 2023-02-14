@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+    <title>Swagentoo</title>
+</head>
+<body>
+    
+    <h1 class="title">Swagentoo - Our produtcs</h1>
+    <p style="text-align: center;"><a class="navlink" href="index.html">home</a> - <a class="navlink" href="services.html">services</a> - <a class="navlink" href="monsters.html">products</a> - <a class="navlink" href="delivert.html">delivery</a></p>
+    <div id="menu">
+        <!--div class="card one">
+            <div class="card-details">
+                <p class="text-title">Monster Normal</p>
+                <p class="text-body"><img class="can" src="./images/normal-trans.png"></p>
+            </div>
+            <button class="card-button">Explore</button>
+        </div>
+
+        <div class="card two">
+            <div class="card-details">
+                <p class="text-title">Monster Juiced</p>
+                <p class="text-body"><img class="can" src="./images/juiced-trans.png"></p>
+            </div>
+            <button class="card-button">Explore</button>
+        </div>
+
+        <div class="card three">
+            <div class="card-details">
+                <p class="text-title">Monster Punch</p>
+                <p class="text-body"><img class="can" src="./images/punch-trans.png"></p>
+            </div>
+            <button class="card-button">Explore</button>
+        </div>
+
+        <div class="card four">
+            <div class="card-details">
+                <p class="text-title">Monster Ultra</p>
+                <p class="text-body"> <img class="can" src="./images/ultra-trans.png"></p>
+            </div>
+            <button class="card-button">Explore</button>
+        </div>
+
+        <button class="button big search"> Explore Everything </button>
+
+    </div-->
+
+    <div class="center">
+        <img class="can" style="background-color: #cce;" src="./images/ultra-trans.png"><img class="can" style="background-color: #f6d;" src="./images/pipeline-punch.png"><img class="can" style="background-color: #f80;" src="./images/juiced-trans.png"><img class="can" style="background-color: #222;" src="./images/normal-trans.png">
+    </div>
+
+    <form class="form" id="search-form">
+        <label for="search">
+            <input placeholder="search" id="search-input" type="text" >
+            <button class="button search"> Search</button>
+        </label>
+    </form>
+
+    <ul id="results"></ul>
+      
+      <script> 
+        const form = document.getElementById("search-form");
+        const input = document.getElementById("search-input");
+        const results = document.getElementById("results");
+
+        const products = [
+        { name: "product 1", description: "This is a description for product 1", url: "./products/product1.html" },
+        { name: "product 2", description: "This is a description for product 2", url: "product2.html" },
+        { name: "product 3", description: "This is a description for product 3", url: "product3.html" }
+        ];
+
+        form.addEventListener("submit", event => {
+        event.preventDefault();
+
+        while (results.firstChild) {
+            results.removeChild(results.firstChild);
+        }
+
+        const query = input.value.toLowerCase();
+
+        products.forEach(product => {
+            if (product.name.toLowerCase().includes(query) || product.description.toLowerCase().includes(query)) {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${product.url}"><strong>${product.name}</strong><br>${product.description}</a>`;
+            results.appendChild(li);
+            }
+        });
+        });
+        </script> 
+</body>
+
+</html>

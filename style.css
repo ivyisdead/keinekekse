@@ -1,0 +1,34 @@
+body{
+  background-color: #111;
+  color: #eee;
+  font-family: monospace;
+  max-width: 1024px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 300%;
+}
+
+.center {
+  text-align: center;
+}
+
+.can {
+  padding: 10px;
+  background-color: #eee;
+  height:600px;
+}
+
+.can:hover{
+  height: 610px;
+}
+
+.navlink {
+  color: #0f0
+}
+
+.navlink:hover {
+  color: #0ff;
+}
