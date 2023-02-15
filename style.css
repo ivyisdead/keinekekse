@@ -11,24 +11,128 @@ h1 {
   font-size: 300%;
 }
 
+h2 {
+  color: #0f0;
+}
+
 .center {
   text-align: center;
 }
 
 .can {
   padding: 10px;
-  background-color: #eee;
-  height:600px;
+  height: 470px;
 }
 
-.can:hover{
-  height: 610px;
+.zeroultra {
+  animation-name: zeroultra2;
+  animation-duration: 0.3s;
+  background-color: #cce;
+  padding: 10px;
+  height: 470px;
+}
+
+@keyframes zeroultra1 {
+  from {background-color: #cce;}
+  to {background-color: #aad;}
+}
+
+@keyframes zeroultra2 {
+  from {background-color: #aad;}
+  to {background-color: #cce;}
+}
+
+.zeroultra:hover {
+  animation-name: zeroultra1;
+  animation-duration: 0.3s;
+  background-color: #aad;
+}
+
+.pipelinepunch {
+  animation-name: pipelinepunch2;
+  animation-duration: 0.3s;
+  background-color: #f6d;
+  padding: 10px;
+  height: 470px;
+}
+
+@keyframes pipelinepunch1 {
+  from {background-color: #f6d;}
+  to {background-color: #f7e;}
+}
+
+@keyframes pipelinepunch2 {
+  from {background-color: #f7e;}
+  to {background-color: #f6d;}
+}
+
+.pipelinepunch:hover {
+  animation-name: pipelinepunch1;
+  animation-duration: 0.3s;
+  background-color: #f7e;
+}
+
+.juiced {
+  animation-name: juiced2;
+  animation-duration: 0.3s;
+  background-color: #f80;
+  padding: 10px;
+  height: 470px;
+}
+
+@keyframes juiced1 {
+  from {background-color: #f80;;}
+  to {background-color: #fa3;}
+}
+
+@keyframes juiced2 {
+  from {background-color: #fa2;}
+  to {background-color: #f80;}
+}
+
+.juiced:hover {
+  animation-name: juiced1;
+  animation-duration: 0.3s;
+  background-color: #fa2;
+}
+
+.classic {
+  animation-name: classic2;
+  animation-duration: 0.3s;
+  background-color: #222;
+  padding: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 470px;
+}
+
+@keyframes classic1 {
+  from {background-color: #222;}
+  to {background-color: #6e6;}
+}
+
+@keyframes classic2 {
+  from {background-color: #6e6;}
+  to {background-color: #222;}
+}
+
+.classic:hover {
+  animation-name: classic1;
+  animation-duration: 0.3s;
+  background-color: #6e6;
 }
 
 .navlink {
   color: #0f0
 }
 
+@keyframes greenblue {
+  from {color: #0f0;}
+  to {color: #0ff;}
+}
+
 .navlink:hover {
+  animation-name: greenblue;
+  animation-duration: 0.3s;
   color: #0ff;
 }
