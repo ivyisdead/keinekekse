@@ -136,3 +136,14 @@ h2 {
   animation-duration: 0.3s;
   color: #0ff;
 }
+
+.promobanner {
+  font-size: 320%;
+  text-align: center;
+  color: #111;
+  background-color: #0f0;
+  border-color: #111;
+  border-radius: 5px;
+  border: dotted;
+  padding: 2%;
+}
