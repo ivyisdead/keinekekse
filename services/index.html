@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+	<title>Our services</title>
+</head>
+<body>
+	<br>
+	<div class="promobanner">
+	<strong>10% off on first order!</strong>
+	</div>
+	<h1 class="title">Keinekekse - Our services</h1>
+	<p style="text-align: center;"><a class="navlink" href="https://keinekekse.ch">home</a> - <a class="navlink" href="../services/">services</a> - <a class="navlink" href="../monsters/">products</a> - <a class="navlink" href="../promotions/">promotions</a></p>
+	<div id="menu">
+
+	<h2>Shipping costs</h2>
+	<p>Every order from 70CHF will not have added shipping costs; everything below 70CHF will have added shipping costs according to the Swiss post's pricing system</p>
+	<p>We only ship in Switzerland</p>
+
+	<form class="form" id="search-form">
+		<label for="search">
+			<input placeholder="search" id="search-input" type="text" >
+			<button class="button search"> Search</button>
+		</label>
+	</form>
+
+	<ul id="results"></ul>
+	  
+	  <script> 
+		const form = document.getElementById("search-form");
+		const input = document.getElementById("search-input");
+		const results = document.getElementById("results");
+
+		const products = [
+		{ name: "product 1", description: "This is a description for product 1", url: "./products/product1.html" },
+		{ name: "product 2", description: "This is a description for product 2", url: "product2.html" },
+		{ name: "product 3", description: "This is a description for product 3", url: "product3.html" }
+		];
+
+		form.addEventListener("submit", event => {
+		event.preventDefault();
+
+		while (results.firstChild) {
+			results.removeChild(results.firstChild);
+		}
+
+		const query = input.value.toLowerCase();
+
+		products.forEach(product => {
+			if (product.name.toLowerCase().includes(query) || product.description.toLowerCase().includes(query)) {
+			const li = document.createElement("li");
+			li.innerHTML = `<a href="${product.url}"><strong>${product.name}</strong><br>${product.description}</a>`;
+			results.appendChild(li);
+			}
+		});
+		});
+		</script> 
+</body>
+
+</html>
